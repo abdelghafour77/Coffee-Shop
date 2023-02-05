@@ -1,3 +1,3 @@
 @foreach ($meals as $meal)
-    {{ $meal }}
+    {{ $meal->title }}
 @endforeach
