@@ -23,6 +23,10 @@ Route::get('/test', function () {
     return view('home');
 });
 
+Route::get('/meals', function () {
+    return view('meals');
+})->middleware(['auth', 'verified'])->name('meals');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
