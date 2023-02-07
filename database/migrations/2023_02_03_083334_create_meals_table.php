@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("title");
             $table->string("slug");
             $table->text("description");
+            $table->text("picture");
+            $table->double('price', 8, 2);
             $table->timestamps();
         });
     }

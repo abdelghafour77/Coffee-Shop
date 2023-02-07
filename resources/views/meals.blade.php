@@ -13,13 +13,16 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                Product name
+                                Picture
                             </th>
                             <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                Color
+                                Menu name
                             </th>
                             <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                Category
+                                Description
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Date
                             </th>
                             <th scope="col" class="px-6 py-3 whitespace-nowrap">
                                 Price
@@ -35,6 +38,10 @@
                                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <div class="h-9 w-9 bg-gray-200 dark:bg-blue-400 rounded-md"></div>
+                                </th>
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $meal->title }}
                                 </th>
                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -42,14 +49,17 @@
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    {{ $meal->created_at }}
+                                    {{ $meal->created_at->diffForHumans() }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     {{ $meal->title }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right">
                                     <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        class="px-3 font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+
+                                    <a href="#"
+                                        class="px-3 font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
