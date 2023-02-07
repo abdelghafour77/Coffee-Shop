@@ -7,24 +7,21 @@ window.Alpine = Alpine;
 Alpine.start();
 
 
-
-// function darkModeListener() {
-//     document.querySelector("html").classList.toggle("dark");
-// }
-
-// document.querySelector("input[type='checkbox']#dark-toggle").addEventListener("click", darkModeListener);
-
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+var themeToggleBtn = document.getElementById('theme-toggle');
 
 // Change the icons inside the button based on previous settings
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     themeToggleLightIcon.classList.remove('hidden');
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('color-theme', 'dark');
 } else {
     themeToggleDarkIcon.classList.remove('hidden');
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('color-theme', 'light');
 }
 
-var themeToggleBtn = document.getElementById('theme-toggle');
 
 themeToggleBtn.addEventListener('click', function () {
 
