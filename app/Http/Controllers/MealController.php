@@ -37,7 +37,21 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "title" => "required",
+            "description" => "required",
+            "image" => "required|image|mimes:jpg,bmp,png",
+        ]);
+        // $request->file('image');
+        $inputs = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = "images/";
+            $profilImage = date("YmdHis") . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profilImage);
+            $inputs['image'] = "$profilImage";
+        }
+        // dd($inputs);
+        Meal::create($inputs);
     }
 
     /**
