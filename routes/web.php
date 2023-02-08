@@ -32,8 +32,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/meals', [MealController::class, 'index'])->name('meals');
-    Route::get('/meals/edit/{slug}', [MealController::class, 'index'])->name('meals/edit');
+    Route::resource('/meals', MealController::class);
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
