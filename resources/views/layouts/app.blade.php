@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="font-sans antialiased">
@@ -33,7 +34,8 @@
             {{ $slot }}
         </main>
     </div>
-    <script src="{{ asset('../path/to/flowbite/dist/flowbite.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    {{-- <script src="{{ asset('../path/to/flowbite/dist/flowbite.js') }}"></script> --}}
 </body>
 
 </html>
