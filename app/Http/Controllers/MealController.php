@@ -52,6 +52,7 @@ class MealController extends Controller
         }
         // dd($inputs);
         Meal::create($inputs);
+        return redirect()->back();
     }
 
     /**
@@ -96,6 +97,7 @@ class MealController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Meal::destroy($id);
+        return redirect()->back();
     }
 }
