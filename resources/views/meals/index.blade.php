@@ -61,7 +61,7 @@
                                     {{ $meal->created_at->diffForHumans() }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    {{ $meal->title }}
+                                    {{ $meal->price }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right">
 

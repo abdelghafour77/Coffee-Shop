@@ -36,6 +36,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     {{-- <script src="{{ asset('../path/to/flowbite/dist/flowbite.js') }}"></script> --}}
+    @include('sweetalert::alert')
 </body>
 
 </html>

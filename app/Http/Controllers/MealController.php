@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Meal;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class MealController extends Controller
 {
@@ -15,7 +17,7 @@ class MealController extends Controller
     public function index()
     {
         $meals = Meal::all();
-        // return "aaaaaaaaa";
+
         return view('meals.index', ["meals" => $meals]);
     }
 
@@ -52,6 +54,8 @@ class MealController extends Controller
         }
         // dd($inputs);
         Meal::create($inputs);
+        toast('Your Post as been submited!', 'success');
+
         return redirect()->back();
     }
 
