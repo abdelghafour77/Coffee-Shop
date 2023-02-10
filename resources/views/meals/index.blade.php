@@ -47,7 +47,9 @@
                         @foreach ($meals as $meal)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="h-9 w-9 rounded-md" src="{{ asset("images/$meal->image") }}" alt="Image">
+                                    {{-- <img class="h-9 w-9 rounded-md" src="{{ asset("images/$meal->image") }}" alt="Image"> --}}
+                                    {{-- <img class="h-9 w-9 rounded-md" src="{{ Storage::url($meal->image) }}" alt="Image"> --}}
+                                    <img class="h-9 w-9 rounded-md" src="{{ asset('storage/' . $meal->image) }}" alt="Image">
                                     {{-- <div class="h-9 w-9 bg-gray-200 dark:bg-blue-400 rounded-md"></div> --}}
                                 </th>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
