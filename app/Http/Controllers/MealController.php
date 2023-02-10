@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\Meal;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
 
 
 class MealController extends Controller
@@ -46,12 +48,14 @@ class MealController extends Controller
         ]);
         // $request->file('image');
         $inputs = $request->all();
-        if ($image = $request->file('image')) {
-            $destinationPath = "images/";
-            $profilImage = date("YmdHis") . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profilImage);
-            $inputs['image'] = "$profilImage";
-        }
+        $inputs['slug'] = Str::slug($inputs['title'], '-');
+        // if ($image = $request->file('image')) {
+        //     $destinationPath = "images/";
+        //     $profilImage = date("YmdHis") . "." . $image->getClientOriginalExtension();
+        //     $image->move(public_path($destinationPath), $profilImage);
+        //     $inputs['image'] = "$profilImage";
+        // }
+        $inputs['image'] = $request->file('image')->store('images', 'public');
         // dd($inputs);
         Meal::create($inputs);
         toast('Your Post as been submited!', 'success');
