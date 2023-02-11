@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MealController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\dashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [HomeController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,13 +23,7 @@ Route::get('/test', function () {
     return view('home');
 });
 
-// Route::get('/meals', function () {
-//     return view('meals');
-// })->middleware(['auth', 'verified'])->name('meals');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::resource('meals', MealController::class);
