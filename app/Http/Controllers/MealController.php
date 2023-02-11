@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\Meal;
 use Illuminate\Http\Request;
-// use RealRashid\SweetAlert\Facades\Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 
 class MealController extends Controller
@@ -45,7 +46,7 @@ class MealController extends Controller
             "title" => "required|min:3|max:200",
             "description" => "required|min:5",
             "price" => "required",
-            "image" => "required|image|mimes:jpg,bmp,png",
+            "image" => "required|image|mimes:jpg,bmp,png|max:5120",
         ]);
         $inputs = $request->all();
         $inputs['slug'] = Str::slug($inputs['title'], '-');
@@ -74,9 +75,11 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $meal = Meal::find($id);
+
+        // $meal = Meal::find($id)->where('slug', $id)->first();
+        $meal = Meal::where('slug', $slug)->first();
         return view('meals.edit', ["meal" => $meal]);
     }
 
@@ -90,11 +93,11 @@ class MealController extends Controller
     public function update(Request $request, $id)
     {
 
-        $validatedData = $request->validate([
+        $validatedData = Validator::make($request->all(), [
             "title" => "required|min:3|max:200",
             "description" => "required|min:5",
             "price" => "required",
-            "image" => "image|mimes:jpg,bmp,png",
+            "image" => "image|mimes:jpg,bmp,png|max:5120",
         ]);
         // check if there is problem in validation then redirect to edit page
         if ($validatedData->fails()) {

@@ -1,5 +1,8 @@
 import './bootstrap';
 import 'flowbite';
+import slug from 'alpinejs-slug'
+
+Alpine.plugin(slug)
 
 import Alpine from 'alpinejs';
 

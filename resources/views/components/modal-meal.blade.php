@@ -53,7 +53,7 @@
 
                     <div class="relative">
                         <div class="relative">
-                            <Textarea name="description" id="description" rows="4"
+                            <Textarea name="description" id="description" rows="3"
                                 class="@error('description') border-red-500 dark:border-red-500  @enderror block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-600 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 peer"></Textarea>
 
                             <label for="description"
@@ -69,7 +69,7 @@
 
                     <div class="relative">
                         <div x-data="fileUpload" :class="imageUrl && 'border-blue-600 dark:border-blue-500'"
-                            class="@error('image') border-red-500 hover:border-red-600 @enderror flex justify-center items-center border-2 border-gray-300 hover:border-blue-500 hover:bg-gray-300 dark:hover:bg-gray-800 hover:bg-opacity-25 dark:border-dark-line border-dashed rounded-md h-48 overflow-y-hidden">
+                            class="@error('image') border-red-500 hover:border-red-600 @enderror flex justify-center items-center border-2 border-gray-300 hover:border-blue-500 hover:bg-gray-300 dark:hover:bg-gray-800 hover:bg-opacity-25 dark:border-dark-line border-dashed rounded-md h-36 overflow-y-hidden">
                             <template x-if="!imageUrl">
                                 <label class="space-y-1 cursor-pointer text-center px-6 pt-5 pb-6 w-full"
                                     for="image">
@@ -83,12 +83,10 @@
                                         <label
                                             class="relative bg-transparent rounded-md font-medium text-blue-600 dark:text-blue-500">
                                             <p class="text-gray-500 dark:text-white space-y-1">
-                                                <span class="text-blue-600 dark:text-blue-500">Upload a file</span> or
-                                                drag
-                                                and drop
-                                                <span class="block text-xs text-gray-500">PNG, JPG up to *MB</span>
+                                                <span class="text-blue-600 dark:text-blue-500">Upload a Image</span>
+                                                or drag and drop
+                                                <span class="block text-xs text-gray-500">PNG, JPG up to 5MB</span>
                                             </p>
-                                            {{-- File input moved outside of template so to not be overwritten by the x-if --}}
                                         </label>
                                     </div>
                                 </label>

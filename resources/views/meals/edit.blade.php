@@ -1,22 +1,25 @@
 <x-app-layout>
+    <x-slot name="title">{{ $meal->title }}</x-slot>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Meals') }}
         </h2>
     </x-slot>
+    {{-- pass title to layout --}}
+    @section('title', 'Meals')
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add Meal</h3>
+                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Update Meal</h3>
                 <form class="space-y-6" action="{{ route('meals.update', $meal->id) }}" method="POST"
-                    enctype="multipart/form-data">
+                    enctype="multipart/form-data" x-data="{ title: '{{ $meal->title }}' }">
                     @csrf
                     @method('PUT')
                     <div class="relative">
                         <div class="relative">
-                            <input type="text" name="title" id="title"
+                            <input type="text" name="title" id="title" x-model="title"
                                 class=" @error('title') border-red-500 dark:border-red-500 @enderror block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-600 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 peer"
                                 placeholder=" " value="{{ old('title', $meal->title) }}" />
                             <label for="title"
@@ -26,6 +29,21 @@
 
                         </div>
                         @error('title')
+                            <div class="text-sm mt-0 text-red-600 dark:text-red-600">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="relative">
+                        <div class="relative">
+                            <input type="text" name="slug" id="slug"
+                                class=" @error('slug') border-red-500 dark:border-red-500 @enderror block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-800 bg-gray-50 dark:bg-gray-600 rounded-lg border-1 border-gray-300 appearance-none dark:text-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 peer"
+                                placeholder=" " x-slug="title" disabled />
+                            <label for="slug"
+                                class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-600 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
+                                Slug
+                            </label>
+
+                        </div>
+                        @error('slug')
                             <div class="text-sm mt-0 text-red-600 dark:text-red-600">{{ $message }}</div>
                         @enderror
                     </div>
@@ -47,7 +65,7 @@
 
                     <div class="relative">
                         <div class="relative">
-                            <Textarea name="description" id="description" rows="4"
+                            <Textarea name="description" id="description" rows="3"
                                 class="@error('description') border-red-500 dark:border-red-500  @enderror block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-600 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 peer">{{ old('dexcription', $meal->description) }}</Textarea>
 
                             <label for="description"
@@ -77,14 +95,10 @@
                                         <label
                                             class="relative bg-transparent rounded-md font-medium text-blue-600 dark:text-blue-500">
                                             <p class="text-gray-500 dark:text-white space-y-1">
-                                                <span class="text-blue-600 dark:text-blue-500">Upload a
-                                                    file</span> or
-                                                drag
-                                                and drop
-                                                <span class="block text-xs text-gray-500">PNG, JPG up to
-                                                    *MB</span>
+                                                <span class="text-blue-600 dark:text-blue-500">
+                                                    Upload a Image</span> or drag and drop <span
+                                                    class="block text-xs text-gray-500">PNG, JPG up to 5MB</span>
                                             </p>
-                                            {{-- File input moved outside of template so to not be overwritten by the x-if --}}
                                         </label>
                                     </div>
                                 </label>
