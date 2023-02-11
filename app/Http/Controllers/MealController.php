@@ -76,7 +76,8 @@ class MealController extends Controller
      */
     public function edit($id)
     {
-        //
+        $meal = Meal::find($id);
+        return view('meals.edit', ["meal" => $meal]);
     }
 
     /**
@@ -88,7 +89,30 @@ class MealController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $validatedData = $request->validate([
+            "title" => "required|min:3|max:200",
+            "description" => "required|min:5",
+            "price" => "required",
+            "image" => "image|mimes:jpg,bmp,png",
+        ]);
+        // check if there is problem in validation then redirect to edit page
+        if ($validatedData->fails()) {
+            return back()->withErrors($validatedData->errors());
+        }
+
+
+
+        $meal = Meal::find($id);
+        $inputs = $request->all();
+        $inputs['slug'] = Str::slug($inputs['title'], '-');
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($meal->image);
+            $inputs['image'] = $request->file('image')->store('images', 'public');
+        }
+        $meal->update($inputs);
+        toast('Your Post as been updated!', 'success');
+        return redirect()->route('meals.index');
     }
 
     /**
