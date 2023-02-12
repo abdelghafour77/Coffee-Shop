@@ -465,7 +465,7 @@
             </div>
         </div>
     </div>
-    <div class="space">
+    {{-- <div class="space">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-7 mb-40 mb-xl-0">
@@ -514,8 +514,8 @@
                 src="assets/img/shape/leaf_3.png" alt="shape"></div>
         <div class="shape-mockup leaf jump-reverse d-none d-xxl-block" data-bottom="120px" data-right="0%"><img
                 src="assets/img/shape/plate_1.png" alt="shape"></div>
-    </div>
-    <div class="space-bottom">
+    </div> --}}
+    {{-- <div class="space-bottom">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-xl-4 col-md-6">
@@ -541,7 +541,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <section class="space bg-smoke2" data-bg-src="assets/img/bg/product_bg_1.png">
         <div class="container">
             <div class="title-area text-center"><span class="sub-title"><img class="icon"
@@ -688,7 +688,7 @@
                     </div>
                     <div class="text-center mt-5"><a href="shop.html" class="as-btn">View All Menus</a></div>
                 </div>
-                <div class="tab-pane fade" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
+                {{-- <div class="tab-pane fade" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
                     <div class="tab-menu2 filter-menu-active"><button data-filter="*" class="active"
                             type="button"><img src="assets/img/icon/menu_1_1.svg" alt="Icon"> All Menus</button>
                         <button data-filter=".cat23" type="button"><img src="assets/img/icon/menu_1_4.svg"
@@ -814,16 +814,16 @@
                                     <p class="product-text">Rapidiously repurpose customer directed markets.
                                         Rapidiously enhance extensive.</p><span class="price">$100.85</span>
                                     <div class="actions"><a href="#QuickView" class="icon-btn popup-content"><i
-                                                class="far fa-eye"></i></a> <a href="cart.html"
-                                            class="icon-btn"><i class="far fa-cart-plus"></i></a> <a
-                                            href="wishlist.html" class="icon-btn"><i class="far fa-heart"></i></a>
+                                                class="far fa-eye"></i></a> <a href="cart.html" class="icon-btn"><i
+                                                class="far fa-cart-plus"></i></a> <a href="wishlist.html"
+                                            class="icon-btn"><i class="far fa-heart"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-5"><a href="shop.html" class="as-btn">View All Menus</a></div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -845,7 +845,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="space">
+    {{-- <section class="space">
         <div class="container">
             <div class="title-area text-center"><span class="sub-title"><img class="icon"
                         src="assets/img/icon/title_icon.svg" alt="icon"> Menu Board</span>
@@ -985,10 +985,10 @@
                 alt="shape"></div>
         <div class="shape-mockup jump-reverse" data-bottom="15%" data-left="4%"><img
                 src="assets/img/shape/leaf_5.png" alt="shape"></div>
-        <div class="shape-mockup leaf jump" data-bottom="15%" data-right="0"><img
-                src="assets/img/shape/leaf_6.png" alt="shape"></div>
-    </section>
-    <section class="space bg-title position-relative" data-bg-src="assets/img/bg/booking_bg_2.png">
+        <div class="shape-mockup leaf jump" data-bottom="15%" data-right="0"><img src="assets/img/shape/leaf_6.png"
+                alt="shape"></div>
+    </section> --}}
+    {{-- <section class="space bg-title position-relative" data-bg-src="assets/img/bg/booking_bg_2.png">
         <div class="container as-container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-xl-auto">
@@ -1030,7 +1030,7 @@
             </div>
             <div class="available-table-bg" data-bg-src="assets/img/bg/table_bg_1.jpg"></div>
         </div>
-    </section>
+    </section> --}}
     <section class="space bg-smoke2">
         <div class="container">
             <div class="title-area text-center"><span class="sub-title"><img class="icon"
@@ -1137,7 +1137,7 @@
         <div class="shape-mockup leaf jump" data-bottom="0%" data-right="0"><img
                 src="assets/img/shape/leaf_group_2.png" alt="shape"></div>
     </section>
-    <section class="space">
+    {{-- <section class="space">
         <div class="container">
             <div class="title-area text-center"><span class="sub-title"><img class="icon"
                         src="assets/img/icon/title_icon.svg" alt="icon"> News & Blog</span>
@@ -1157,8 +1157,8 @@
                             <h3 class="blog-title"><a href="blog-details.html">10 Reasons To Do A Digital Detox
                                     Challenge</a></h3>
                             <div class="blog-bottom"><a href="blog-details.html" class="line-btn">Read More</a> <a
-                                    href="blog-details.html" class="comment"><i
-                                        class="fa-regular fa-comments"></i>3 Comments</a></div>
+                                    href="blog-details.html" class="comment"><i class="fa-regular fa-comments"></i>3
+                                    Comments</a></div>
                         </div>
                     </div>
                 </div>
@@ -1172,8 +1172,8 @@
                             <h3 class="blog-title"><a href="blog-details.html">New Restaurant Town Our Ple Award
                                     Contract</a></h3>
                             <div class="blog-bottom"><a href="blog-details.html" class="line-btn">Read More</a> <a
-                                    href="blog-details.html" class="comment"><i
-                                        class="fa-regular fa-comments"></i>3 Comments</a></div>
+                                    href="blog-details.html" class="comment"><i class="fa-regular fa-comments"></i>3
+                                    Comments</a></div>
                         </div>
                     </div>
                 </div>
@@ -1187,8 +1187,8 @@
                             <h3 class="blog-title"><a href="blog-details.html">Innovative Hot Chessy raw Pasta Make
                                     Creator.</a></h3>
                             <div class="blog-bottom"><a href="blog-details.html" class="line-btn">Read More</a> <a
-                                    href="blog-details.html" class="comment"><i
-                                        class="fa-regular fa-comments"></i>3 Comments</a></div>
+                                    href="blog-details.html" class="comment"><i class="fa-regular fa-comments"></i>3
+                                    Comments</a></div>
                         </div>
                     </div>
                 </div>
@@ -1202,8 +1202,8 @@
                             <h3 class="blog-title"><a href="blog-details.html">Best Hot Chessy raw In Pasta Makeing
                                     Trick.</a></h3>
                             <div class="blog-bottom"><a href="blog-details.html" class="line-btn">Read More</a> <a
-                                    href="blog-details.html" class="comment"><i
-                                        class="fa-regular fa-comments"></i>3 Comments</a></div>
+                                    href="blog-details.html" class="comment"><i class="fa-regular fa-comments"></i>3
+                                    Comments</a></div>
                         </div>
                     </div>
                 </div>
@@ -1213,7 +1213,7 @@
                 src="assets/img/shape/leaf_3.png" alt="shape"></div>
         <div class="shape-mockup leaf jump d-none d-xl-block" data-bottom="12%" data-right="0"><img
                 src="assets/img/shape/plate_2.png" alt="shape"></div>
-    </section>
+    </section> --}}
     <footer class="footer-wrapper footer-layout3" data-bg-src="assets/img/bg/footer_bg_3.jpg">
         <div class="container">
             <div class="footer-top">
@@ -1244,9 +1244,8 @@
                                 <div class="contact-card_icon"><i class="fa-light fa-envelope icon-btn"></i></div>
                                 <div class="contact-card_content">
                                     <h6 class="contact-card_title">Email Now:</h6>
-                                    <p class="contact-card_text"><a
-                                            href="mailto:info@pizzer.com">info@pizzer.com</a> <a
-                                            href="mailto:info.example@pizzer.com">info.example@pizzer.com</a></p>
+                                    <p class="contact-card_text"><a href="mailto:info@pizzer.com">info@pizzer.com</a>
+                                        <a href="mailto:info.example@pizzer.com">info.example@pizzer.com</a></p>
                                 </div>
                             </div>
                         </div>
@@ -1267,8 +1266,8 @@
                                 <div class="as-social"><a href="https://www.facebook.com/"><i
                                             class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i
                                             class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a> <a
-                                        href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a></div>
+                                            class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i
+                                            class="fab fa-whatsapp"></i></a></div>
                             </div>
                         </div>
                     </div>
