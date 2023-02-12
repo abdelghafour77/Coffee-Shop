@@ -19,7 +19,7 @@ class MealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
+        $meals = Meal::latest()->paginate(8);
 
         return view('meals.index', ["meals" => $meals]);
     }
@@ -126,7 +126,11 @@ class MealController extends Controller
      */
     public function destroy($id)
     {
-        Meal::destroy($id);
+
+        $meal = Meal::find($id);
+        Storage::disk('public')->delete($meal->image);
+        $meal->delete();
+        toast('Your Post as been deleted!', 'success');
         return redirect()->back();
     }
 }
